@@ -1,0 +1,33 @@
+r<html>
+<head>
+	<meta charset = "UTF-8">
+	<title>Ejercicio 4</title>
+
+	<script type="text/javascript">
+		function cambiarAtributos(){
+			document.getElementById('parrafo').style.fontsize="25px";
+			document.getElementById('parrafo').style.fontFamily="Verdana";
+			document.getElementById('parrafo').style.backgroundColor="#FF4466";
+			document.getElementById('parrafo').innerHTML = "Esto es cambiar un texto de parafo";
+			document.getElementById('parrafo').innerText = "Esto es otro texto";
+			document.getElementById('parrafo').style.border. = "solid 12px #000000";
+			document.getElementById('parrafo').style.visibility = "hidden";
+			document.getElementById('parrafo').style.display = "name";
+
+			var x = 5;
+			var y = 6;
+			var z = x+y;
+			document.getElementById('parrafo').innerHTML = z;
+		}
+	</script>
+</head>
+<body>
+	<p id="parrafo">
+		Esto es un ejemplo de parrafo
+	</p>
+
+	<script type="text/javascript">
+		cambiarAtributos();
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title> Javascript </title>
+</head>
+<body>
+<script type="text/javascript">
+	document.write("Hola Mundo");
+	alert("Hola Mundo");
+	var nombre = prompt('Dato Usuario','Ingrese un Dato'); //prompt permite que el ususario ingrese datos
+	alert(nombre);
+	confirm ('Desea eliminar el Registro'); //confirm permite al usuario aceptar o cancelar
+	function obtenerNombre(){
+		imprimirNombre(nombre);
+	}
+	function imprimirNombre(){
+		alert(nombre);
+	}
+
+	obtenerNombre('Annemarie Rolo');
+
+	var nombre = "Miguel Angel Landa";
+	var res = nombre.split(" "); //split corta una cadena de caracteres
+	alert(res.length); // length me dice el tama;o de la cadena en este caso devuelve 3
+
+	for (var i=0; i<res,length; i++){
+		alert(res[i]);
+	}
+
+	document.getElementById("nombre"); //nusca la etiqueta
+	document.getElementByTagName("A"); //busca todos los elementos que cumplan esa condicion
+</script>
+</body>
+</html>
