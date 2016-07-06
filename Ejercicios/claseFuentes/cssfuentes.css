@@ -1,0 +1,9 @@
+/*@font-face{
+	font-family: miFuente;
+	src: url(newfont.ttf);
+}*/
+h1{
+	font-family: "Verdana", Arial;
+	font-size: 24px;
+	font-weight: bold;
+}

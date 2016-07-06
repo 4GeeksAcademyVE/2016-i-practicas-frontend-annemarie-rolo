@@ -1,0 +1,29 @@
+.contenedor{
+	background: #CCCCCC;
+	width:400px;
+	height:400px;
+	background-image: url(image/fondo.jpg), url(image/fondo1.jpg), url(image/fondo2.jpg);
+	background-size: 200px 100px, 200px 100px, 200px 100px; 
+	background-repeat: repeat-x, no-repeat, repeat-x;
+	background-position: left top, center, right bottom;
+
+	/*background: url(fondo.jpg) left bottom repeat-x; Repite tantas vece se pueda la imagen en el eje x*/
+	/*background-size: 100px 100px;*/
+	/*background-size: cover; coloca la imagen del tama;o del contenedor*/
+	/*background-size: contain; trata de cubrir todo lo que pueda*/
+	/*background-size: 100px 100px auto; 
+	background-size: auto;*/
+	/*border: 10px solid black;  
+	padding: 50px;
+	background: url(fondo1.jpg);
+	background-repeat: no-repeat;*/
+	/*background-origin: content-box; Origen donde va a iniciar la imagen, CONTENT-BOX (esquina superior izquierda)*/
+	/*background-origin: padding-box;
+	background-origin: border-box;*/
+
+	/*border: 10px dotted black;
+	padding: 15px;
+	background: cyan;
+	background-clip: content-box;*/
+
+}

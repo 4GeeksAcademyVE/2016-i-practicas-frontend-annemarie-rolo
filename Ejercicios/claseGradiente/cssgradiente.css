@@ -1,0 +1,19 @@
+.gradiente{
+	width: 800px;
+	height: 200px;
+	/*background: -moz-linear-gradient(left,pink,purple);
+	background: linear-gradient(left,pink,purple);*/
+	background: -moz-linear-gradient(left, rgb(255, 195, 0), rgb(255, 87, 51));
+	background: linear-gradient(left, rgb(255, 195, 0), rgb(255, 87, 51));
+}
+
+.radial{
+	width: 400px;
+	height: 400px;
+	background: -moz-radial-gradient(red 20%,blue 50%,yellow 30%);
+}
+.radial-repeat{
+	width: 400px;
+	height: 400px;
+	background: -moz-repeating-radial-gradient(red 50%,blue 20%,yellow 20%);
+}

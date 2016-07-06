@@ -1,0 +1,16 @@
+.contenedor{
+	width:600px;
+	height:600px;
+}
+#p1{
+	height: 100px;
+	background-color: rgb(251, 255, 0);	
+}
+#p2{
+	height: 100px;
+	background-color: rgba(12, 0, 255 ,0.35);	 
+}
+#p3{
+	height: 100px;
+	background-color: hsl(8, 100%, 50%);	
+}

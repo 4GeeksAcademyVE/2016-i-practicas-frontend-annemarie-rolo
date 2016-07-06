@@ -1,0 +1,49 @@
+.contenedor{
+	width:800px;
+	height:200px;
+	background-color: #CCCCCC;
+
+}
+
+#p1{
+	color: #ffffff;
+	background-color: rgb(120,180,14);
+}
+
+#p2{
+	color: #ffffff;
+	background-color: rgba(120,180,14,0.35); 
+}
+
+#p3{
+	color: #ffffff;
+	background-color: hsl(120, 100%, 70%); /*matiz saturacion y brillo*/
+
+}
+
+#p4{
+	color: #ffffff;
+	height: 30px;
+	background-color: hsla(120, 100%, 25%, 0.56);
+	vertical-align: top; 
+
+}
+
+div.fondoprincipal{
+	width: 800px;
+	height: 300px;
+	background-color: #ff4444;
+}
+
+div{
+	width: 70px;
+	height: 40px;
+	background-color:#ffffff; 
+}
+
+div.prueba {
+	color: cyan;
+	width: 70px;
+	height: 40px;
+	background-color:#000;
+}
