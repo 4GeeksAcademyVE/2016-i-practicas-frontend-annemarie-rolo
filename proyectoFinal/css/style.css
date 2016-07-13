@@ -1,0 +1,56 @@
+body{
+	background:#d6eaf8;
+}
+.nav li a{
+	color:#000000;
+	font-family: "myFont1";
+	font-size:16px;
+}
+.row a{
+	color:#000000;
+	font-family: "myFont1";
+	font-size:16px;
+}
+@font-face{
+	font-family: myFont;
+	src: url(../fonts/phoenix.ttf);
+}
+h1.font1{
+	font-family: "myFont";
+	font-size: 46px;	
+}
+h3.font1{
+	font-family: "myFont";
+	font-size: 24px;	
+}
+@font-face{
+	font-family: myFont1;
+	src:url(../fonts/Azurite.ttf);
+}
+p.font2{
+	font-family: "myFont1";
+	font-size: 18px;
+}
+.container2{
+	background: #f7dc6f ;
+}
+
+.subtitle{
+	font-family: "myFont1";
+	font-size: 18px;
+
+}
+
+.subtitle1{
+	font-family: "myFont1";
+	font-size: 18px;
+	background-color:#f7dc6f;
+}
+
+.subtitle1:hover{
+	background-color:#f5cba7;
+}
+
+ul{
+	padding: 0;
+}

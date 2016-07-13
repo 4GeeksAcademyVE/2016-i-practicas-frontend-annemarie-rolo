@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contacto</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+  <div class="container">
+  	<div class="row">
+  	<form action="?" method="post" name="contactoForm" id="contactoForm" onsubmit="return validarForm();">
+  		
+  		<div class="form-group">
+    		<label for="inputNombre" class="control-label col-md-2 subtitle">Nombre</label>
+    		<div class="col-md-10">
+    			<input type="text" class="form-control" id="nombre" placeholder="Nombre" >
+    		</div>
+  		</div>
+  		<div class="form-group">
+    		<label for="inputApellido" class="control-label col-md-2 subtitle">Apellido</label>
+    		<div class="col-md-10">
+    			<input type="text" class="form-control" id="apellido" placeholder="Apellido" >
+  			</div>
+  		</div>
+  		<div class="form-group">
+    		<label for="inputEmail" class="control-label col-md-2 subtitle">Email</label>
+    		<div class="col-md-10">
+    			<input type="email" class="form-control" id="email" placeholder="@example.com" >
+    		</div>
+  		</div>
+  		<div class="form-group">
+    		<label for="inputPais" class="control-label col-md-2 subtitle">Pais</label>
+    		<div class="col-md-10">
+    			<input type="text" class="form-control" id="pais" placeholder="Pais" >
+    		</div>
+  		</div>
+  			<div class="form-group" >
+    		<label for="inputEmpresa" class="control-label col-md-2 subtitle">Empresa</label>
+    		<div class="col-md-10">
+    			<input type="text" class="form-control" id="empresa" placeholder="Empresa" >
+    		</div>
+  		</div>
+  		<div class="form-group">
+  			<label for="inputPostal" class="control-label col-md-2 subtitle">Codigo Postal</label>
+  			<div class="col-md-10">
+  				<input type="text" class="form-control" id="postal" placeholder="Codigo Postal" >
+  			</div>
+  		</div>
+  		<button id="submit" type="submit" class="btn btn-default col-md-offset-1 subtitle1">Enviar</button>
+	</form>
+	</div>
+	<div class="row">
+    	<div class="col-md-1 col-md-offset-4">
+			<a href="inicio.html">Inicio</a>
+	  	</div>
+	  	<div class="col-md-1">
+	  		<a href="contacto.html">Contacto</a>
+	 	</div>
+	  	<div class="col-md-1">
+	  		<a href="acercade.html">Acerca de</a>
+	  	</div>
+	</div>
+</div>
+
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+
+function validateNombre() {
+	var nombre = $('#nombre').val();
+	var checkNombre = /^[a-zA-Z_áéíóúñ\s]*$/;
+	if(!nombre.match(checkNombre)) {
+		alert("Campo Nombre invalido");
+		$('#nombre').val("");
+		$('#nombre').focus();
+		return false;
+	}else{
+		return true;
+	}
+}	
+
+function validateApellido() {
+	var apellido = $('#apellido').val();
+	var checkApellido =/^[a-zA-Z_áéíóúñ\s]*$/;
+	if(!apellido.match(checkApellido)) {
+		alert("Campo Apellido invalido");
+		$('#apellido').val("");
+		$('#apellido').focus();
+		return false;
+	}else{
+		return true;
+	}
+}
+
+function validateEmail() {
+	var email = $('#email').val();
+	var checkEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+	if(!email.match(checkEmail)) {
+		alert("Campo Email invalido");
+		$('#email').val("");
+		$('#email').focus();
+		return false;
+	}else{
+		return true;
+	}
+}
+
+function validatePais() {
+	var pais = $('#pais').val();
+	var checkPais = /^[a-zA-Z_áéíóúñ\s]*$/;
+	if(!pais.match(checkPais)) {
+		alert("Campo Pais invalido");
+		$('#pais').val("");
+		$('#pais').focus();
+		return false;
+	}else{
+		return true;
+	}
+}
+
+function validateEmpresa() {
+	var empresa = $('#empresa').val();
+	var checkEmpresa = /^[a-zA-Z_áéíóúñ\s]*$/;
+	if(!empresa.match(checkEmpresa)) {
+		alert("Campo Empresa invalido");
+		$('#empresa').val("");
+		$('#empresa').focus();
+		return false;
+	}else{
+		return true;
+	}
+}
+
+function validateCode() {
+	var postal = $('#postal').val();
+	var checkPostal = /[0-9 -()+]+$/;
+	if(!postal.match(checkPostal)) {
+		alert("Campo Codigo postal invalido");
+		$('#postal').val("");
+		$('#postal').focus();
+		return false;
+	}else{
+		return true;
+	}
+}
+
+function validarForm(){
+	var flag = true;
+
+	if($('#nombre').val()==""){
+		alert("Debe ingresar nombre");	
+		//$("#nombre").focus();
+		flag=false;
+	}else if($("#nombre").val()!=""){ 
+		flag = validateNombre();
+	}
+
+	if($('#apellido').val()==""){
+		alert("Debe ingresar apellido");	
+		//$("#apellido").focus();
+		flag=false;
+	} else if($("#apellido").val()!=""){ 
+		flag = validateApellido();
+	}
+
+	if($('#email').val()==""){
+		alert("Debe ingresar Email");	
+		//$("#email").focus();
+		flag=false;
+	} else if($("#email").val()!=""){ 
+		flag = validateEmail();
+	}
+
+	if($('#pais').val()==""){
+		alert("Debe ingresar Pais");	
+		//$("#pais").focus();
+		flag=false;
+	} else if($("#pais").val()!=""){ 
+		flag = validatePais();
+	}
+	
+	if($('#empresa').val()==""){
+		alert("Debe ingresar empresa");	
+		//$("#empresa").focus();
+		flag=false;
+	} else if($("#pais").val()!=""){ 
+		flag = validateEmpresa();
+	}
+
+	if($('#postal').val()==""){
+		alert("Debe ingresar Codigo Postal");	
+		//$("#postal").focus();
+		flag=false;
+	} else if($("#postal").val()!=""){ 
+		flag = validateCode();
+	}
+
+	return flag;
+}
+
+</script>
+  </body>
+</html>
