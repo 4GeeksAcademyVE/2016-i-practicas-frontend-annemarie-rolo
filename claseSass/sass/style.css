@@ -1,0 +1,36 @@
+#main p {
+  color: #00ff00;
+  width: 97% redbox;
+    width-background-color: #ff0000;
+    width-color: #000000; }
+
+#main {
+  width: 97%; }
+  #main p, #main div {
+    font-size: 2em; }
+    #main p a, #main div a {
+      font-weigth: bold; }
+  #main pre {
+    font-size: 3em; }
+
+a {
+  font-weight: bold;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+  body.firefox a {
+    font-weight: normal; }
+
+#main {
+  color: black; }
+  #main a {
+    font-weight: bold; }
+    #main a:hover {
+      color: red; }
+
+.funky {
+  font-family: fantasy;
+  font-size: 30em;
+  font-weight: bold; }
+
+/*# sourceMappingURL=style.css.map */

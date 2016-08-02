@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejemplo Json</title>
+	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+</head>
+<body>
+<select name="opciones" id="opciones" class="sele">
+	<option value ="">Seleccione</option>
+</select>
+	<script type="text/javascript">
+				$.ajax({
+					url:"cargar.json",
+					dataType:"json",
+					success:function(data){
+						//alert("Mi objeto Json: " + data.);
+						$.each(data, function(key,val){
+							alert(key + "=" + val);
+							//$(".sele").append("<option value='" + val + "'>" + key + "</option>");
+						});
+					}
+				});
+				//$(".sele").on("change", function(){
+				//	alert($(this).val());
+				//});
+	</script>
+</body>
+</html>

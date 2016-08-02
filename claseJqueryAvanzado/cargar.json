@@ -1,0 +1,31 @@
+{"Paises":
+	[
+		{"Venezuela":
+			[
+				{"Ciudades":
+					[
+						{
+							"ciudad 1": "Caracas",
+							"ciudad 2": "Valencia",
+							"Ciudad 3": "Maracaibo"
+						}
+					]
+
+				}
+			]
+		},
+		{"Colombia":
+			[
+				{"Ciudades":
+					[
+						{
+							"ciudad 1":"Cucuta",
+							"ciudad 2":"Pamplona",
+							"ciudad 3":"Barranquilla"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejemplo 2 Json</title>
+	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+				$(document).ready(function(){
+					$.ajax({
+						url:'practica2.json',
+						success:function(data){
+							$.each(data, function(index,element){
+								$('body').append($('<a>',{
+									text:element.display,
+									href:element.url
+								}));
+							});
+						}
+					});
+				});
+	</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/jquery.bxslider.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+ </head>
+  <body>
+  <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+        <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="image/starwarslogo2.jpg">
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="row">
+        <div class="col-md-5 col-md-offset-3">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav nav-pills nav-justified">
+        <li><a href="inicio.html">Home</a></li>
+        <li><a href="films.html">Films</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="vehicle.html">Vehicles</a></li>
+        <li><a href="planet.html">Planets</a></li>
+        <li><a href="starships.html">Starships</a></li>
+      </ul>
+      </div>
+      </div>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    </nav>
+      <div class="container">
+      
+        <div class="row">
+            <div class="col-md-12 vehicle" style="background:rgba(185, 204, 220,0.6);">
+
+            </div>
+        </div>
+
+         <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="previous btn btn-primary disabled boton" style="margin-top:25px">Previous</a>
+                <button type="button" class="next btn btn-primary disabled boton" style="margin-top:25px">Next</a>
+            </div>
+         </div>
+
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+
+        <script type="text/javascript">
+
+         function cargarVehicle(_url){
+
+         $.ajax({
+            type: "GET",
+            url: _url,
+            dataType: "json",
+            success: function(data){
+               if(data.previous!=null){
+                  $('.previous').attr('value',data.previous);
+                  $('.previous').removeClass('disabled');
+               }else{
+                  $('.previous').addClass('disabled');
+               }
+               if(data.next!=null){
+                  $('.next').attr('value',data.next);
+                  $('.next').removeClass('disabled');
+               }else{
+                  $('.next').addClass('disabled');
+               }
+               $(".vehicle").html("");
+                for (var i = 0; i < data.results.length; i++){
+                    $('.vehicle').append('<div class="col-md-6"  height: 250px;">' +
+                        '<div class="info"> ' +
+                        '<h3 class="font1">' + data.results[i].name +'</h3>' +
+                        '<p class="font2"><b>Model: </b>'  + data.results[i].model +'</p>' +
+                        '<p class="font2"><b>Vehicle Class: </b>'  + data.results[i].vehicle_class +'</p>' +
+                        '<p class="font2"><b>Length: </b>' + data.results[i].length +'</p>' +
+                        '<p class="font2"><b>Passengers: </b>'  + data.results[i].passengers +'</p>' + 
+                        '<p class="font2"><b>Crew: </b>'  + data.results[i].crew +'</p>' +
+                        '</div></div>');
+                }
+            }
+        });
+         }
+        $(document).ready(function(){
+        
+              cargarVehicle("http://swapi.co/api/vehicles/");
+
+               $('.next').on("click", function(){
+                  var url = this.value;
+                  cargarVehicle(url);
+               });
+
+               $('.previous').on("click", function(){
+                  var url = this.value;
+                  cargarVehicle(url);
+               });
+         });
+        </script>
+  </body>
+</html>

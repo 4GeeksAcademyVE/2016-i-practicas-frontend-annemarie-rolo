@@ -1,0 +1,15 @@
+body{
+	background: #ccc;
+}
+
+.container{
+	background:#cfd;
+}
+
+.container .row .col-md-8{
+	background:#ccc;
+}
+
+.container-fluid{
+	background:#f0f;
+}

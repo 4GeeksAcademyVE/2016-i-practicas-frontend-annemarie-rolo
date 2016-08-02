@@ -1,0 +1,8 @@
+$.getJSON('practica.json',{},function(data){
+	$.each(data,function(index,element){
+		$('body').append($('<a>',{
+			text: element.display,
+			href: element.url
+		}));
+	});
+});

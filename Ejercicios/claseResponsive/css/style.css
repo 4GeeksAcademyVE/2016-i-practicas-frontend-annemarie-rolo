@@ -1,0 +1,23 @@
+/* Estilos con Media Queire */
+
+body{
+	brackground: #ccc;
+}
+
+@media screen and (max-width: 320px){
+	body{
+		background:#000;
+	}
+}
+
+@media screen and (min-width: 321px) and (max-width: 779px){
+	body{
+		background:-moz-linear-gradient(top,blue,pink);
+	}
+}
+
+@media screen and (min-width: 780px) and (max-width: 1024px){
+	body{
+		background:-moz-linear-gradient(top,blue,red);
+	}
+}

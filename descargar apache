@@ -1,0 +1,13 @@
+$aptitude update
+$aptitude install apache2
+
+
+localhost
+
+its working 
+
+
+cd /var/www/html/
+
+
+

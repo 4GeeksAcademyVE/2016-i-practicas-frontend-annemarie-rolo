@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ejemplo Responsive Media Query</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+</body>
+</html>
+
+/*
+* Estilos con media query
+*/
+body{
+background: #ccc;
+}
+@media screen and (max-width: 320px) {
+body{
+background: #f0d;
+}
+}
+@media screen and (min-width: 321px) and (max-width: 779px) {
+body{
+background: blue;
+}
+}
+@media screen and (min-width: 780px) and (max-width: 1024px) {
+body{
+background: red;
+}
+}

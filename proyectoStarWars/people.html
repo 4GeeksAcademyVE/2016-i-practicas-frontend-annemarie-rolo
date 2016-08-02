@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/jquery.bxslider.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+ </head>
+  <body>
+  <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+        <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="image/starwarslogo2.jpg">
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="row">
+        <div class="col-md-5 col-md-offset-3">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav nav-pills nav-justified">
+         <li><a href="inicio.html">Home</a></li>
+        <li><a href="films.html">Films</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="vehicle.html">Vehicles</a></li>
+        <li><a href="planet.html">Planets</a></li>
+        <li><a href="starships.html">Starships</a></li>
+      </ul>
+      </div>
+      </div>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    </nav>
+      <div class="container">
+      
+        <div class="row">
+            <div class="col-md-12 people" style="background:rgba(185, 204, 220,0.6);">
+
+            </div>
+        </div>
+
+         <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="previous btn btn-primary disabled boton" style="margin-top:25px">Previous</a>
+                <button type="button" class="next btn btn-primary disabled boton" style="margin-top:25px">Next</a>
+            </div>
+         </div>
+
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+
+        <script type="text/javascript">
+        function mostrarHomeWorld(url, pos){
+            $.ajax({
+               url: url,
+               dataType: "json",
+               success: function(data){
+                  $("p.homeworld"+pos).html("<b>Homeworld: </b>" + data.name)
+               }
+            });
+         }
+
+         function mostrarSpecies(url, pos){
+            $.ajax({
+               url: url,
+               dataType: "json",
+               success: function(data){
+                  $("p.species"+pos).html("<b>Species Name: </b>" + data.name)
+               }
+            });
+
+         }
+
+         function mostrarClasificacion(url, pos){
+            $.ajax({
+               url: url,
+               dataType: "json",
+               success: function(data){
+                  $("p.clasificacion"+pos).html("<b>Species Classification: </b>" + data.classification)
+               }
+            });
+
+         }
+
+         function mostrarLanguage(url, pos){
+            $.ajax({
+               url: url,
+               dataType: "json",
+               success: function(data){
+                  $("p.language"+pos).html("<b>Species language: </b>" + data.language)
+               }
+            });
+
+         }
+
+         function mostrarFilms(url,pos){
+            $.ajax({
+               url: url,
+               dataType: "json",
+               success: function(data){
+                   $('.films'+pos).append('<li class="font2"> ' + 'Title: ' + data.title + "<br>Episode: "  + data.episode_id + '</li>');
+               }
+            });
+         }
+
+         function cargarPeople(_url){
+
+         $.ajax({
+            type: "GET",
+            url: _url,
+            dataType: "json",
+            success: function(data){
+               if(data.previous!=null){
+                  $('.previous').attr('value',data.previous);
+                  $('.previous').removeClass('disabled');
+               }else{
+                  $('.previous').addClass('disabled');
+               }
+               if(data.next!=null){
+                  $('.next').attr('value',data.next);
+                  $('.next').removeClass('disabled');
+               }else{
+                  $('.next').addClass('disabled');
+               }
+               $(".people").html("");
+                for (var i = 0; i < data.results.length; i++){
+                    $('.people').append('<div class="col-md-6"  height: 590px;">' +
+                        '<div class="info"> ' +
+                        '<h3 class="font1">' + data.results[i].name +'</h3>' +
+                        '<p class="homeworld'+i+' font2"></p>' +
+                        '<p class="species'+i+' font2"></p>' + 
+                        '<p class="clasificacion'+i+' font2"></p>' + 
+                        '<p class="language'+i+' font2"></p>' + 
+                        '</div><ul class="films'+i+'"><b class="font2">Films: </b></ul></div>');
+                      
+                      for (var j = 0; j < data.results[i].films.length; j++){
+                             mostrarFilms(data.results[i].films[j],i);
+
+                      }
+
+                     mostrarHomeWorld(data.results[i].homeworld, i);
+                     mostrarSpecies(data.results[i].species[0], i);
+                     mostrarClasificacion(data.results[i].species[0], i);
+                     mostrarLanguage(data.results[i].species[0], i);
+                    
+                }
+            }
+        });
+         }
+        $(document).ready(function(){
+        
+              cargarPeople("http://swapi.co/api/people/");
+
+               $('.next').on("click", function(){
+                  var url = this.value;
+                  cargarPeople(url);
+               });
+
+               $('.previous').on("click", function(){
+                  var url = this.value;
+                  cargarPeople(url);
+               });
+         });
+        </script>
+  </body>
+</html>
